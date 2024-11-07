@@ -49,11 +49,13 @@ public:
   Graph(std::string prefix, bool use_dag = false, bool directed = false,
         bool use_vlabel = false, bool use_elabel = false, 
         bool need_reverse = false, bool bipartite = false);
+
   Graph() : name_(""), n_vertices(0), n_edges(0), nnz(0), 
             max_label_frequency_(0), max_label(0), feat_len(0), 
             num_vertex_classes(0), num_edge_classes(0), core_length_(0),
             edges(NULL), vertices(NULL), vlabels(NULL), elabels(NULL),
             features(NULL), src_list(NULL), dst_list(NULL) { }
+            
   Graph(vidType nv, eidType ne) { allocateFrom(nv, ne); }
   ~Graph();
   Graph(const Graph &)=delete;

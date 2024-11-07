@@ -27,8 +27,10 @@ public:
   inline __device__ __host__ vidType size() { return num_vertices; }
   inline __device__ __host__ eidType E() { return num_edges; }
   inline __device__ __host__ eidType sizeEdges() { return num_edges; }
+
   inline __device__ __host__ bool valid_vertex(vidType vertex) { return (vertex < num_vertices); }
   inline __device__ __host__ bool valid_edge(eidType edge) { return (edge < num_edges); }
+  
   inline __device__ __host__ vidType get_src(eidType eid) const { return d_src_list[eid]; }
   inline __device__ __host__ vidType get_dst(eidType eid) const { return d_dst_list[eid]; }
   inline __device__ __host__ vidType* get_src_ptr(eidType eid) const { return d_src_list; }
@@ -83,7 +85,7 @@ public:
     size_t mem_el = mem_edge; // memory for the edgelist
     size_t mem_all = mem_graph + mem_el;
     auto mem_gpu = get_gpu_mem_size();
-    Timer t;
+    // Timer t;
     if (mem_all > mem_gpu) {
       //std::cout << "Allocating graph memory using CUDA unified memory\n";
       CUDA_SAFE_CALL(cudaMallocManaged(&d_colidx, nnz * sizeof(vidType)));
