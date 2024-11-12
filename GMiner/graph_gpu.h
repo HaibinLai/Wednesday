@@ -32,7 +32,9 @@ public:
   inline __device__ __host__ bool valid_edge(eidType edge) { return (edge < num_edges); }
   
   inline __device__ __host__ vidType get_src(eidType eid) const { return d_src_list[eid]; }
-  inline __device__ __host__ vidType get_dst(eidType eid) const { return d_dst_list[eid]; }
+  inline __device__ __host__ vidType get_dst(eidType eid) const { 
+    return d_dst_list[eid]; 
+  }
   inline __device__ __host__ vidType* get_src_ptr(eidType eid) const { return d_src_list; }
   inline __device__ __host__ vidType* get_dst_ptr(eidType eid) const { return d_dst_list; }
   inline __device__ __host__ vidType* N(vidType vid) { return d_colidx + d_rowptr[vid]; }
@@ -198,8 +200,8 @@ public:
     //std::cout << "Time on copying edgelist to GPU" << device_id << ": " << t.Seconds() << " sec\n";
   }
   void init_edgelist_um(Graph &g, bool sym_break = false) {
-    Timer t;
-    t.Start();
+    // Timer t;
+    // t.Start();
     size_t i = 0;
     for (vidType v = 0; v < g.V(); v ++) {
       for (auto u : g.N(v)) {
@@ -210,8 +212,8 @@ public:
         i ++;
       }
     }
-    t.Stop();
-    std::cout << "Time generating the edgelist on CUDA unified memory: " << t.Seconds() << " sec\n";
+    // t.Stop();
+    // std::cout << "Time generating the edgelist on CUDA unified memory: " << t.Seconds() << " sec\n";
   }
 
   // using a warp to compute the intersection of the neighbor lists of two vertices
