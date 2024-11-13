@@ -1,0 +1,21 @@
+Usage
+https://chuckiewill.github.io/2022/06/29/Graph/LWA-dataset-format-conversion/
+
+useless but have infomation
+https://www.xnip.cn/ruanjian/anli/108890.html
+https://www.cnblogs.com/youwang/archive/2009/12/26/2310649.html
+
+official website
+https://law.di.unimi.it/datasets.php
+https://webgraph.di.unimi.it/
+https://law.di.unimi.it/datasets.php
+https://mvnrepository.com/artifact/it.unimi.dsi/webgraph/3.6.5
+https://central.sonatype.com/artifact/it.unimi.dsi/webgraph
+https://webgraph.di.unimi.it/docs/it/unimi/dsi/webgraph/BVGraph.html
+
+data
+https://webdatacommons.org/hyperlinkgraph/2014-04/download.html
+https://webdatacommons.org/hyperlinkgraph/2014-04/topology.html
+
+tesseract
+https://binds.ch/wp-content/uploads/2021/04/tesseract2021.pdf
